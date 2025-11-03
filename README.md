@@ -141,14 +141,14 @@ Bu loyiha MIT litsenziyasi ostida tarqatiladi. Batafsil ma'lumot uchun `LICENSE`
 ## 👨‍💻 Muallif
 
 **Sizning Ismingiz**
-- GitHub: [@username](https://github.com/username)
-- Email: your.email@example.com
+- GitHub: [@username](https://github.com/jasurjontoshtemirov)
+- Email: k6yd2007@gmail.com
 
 ## 🙏 Minnatdorchilik
 
 - [Unsplash](https://unsplash.com) - Professional rasmlar uchun
 - [Google Fonts](https://fonts.google.com) - Shriftlar uchun
-- O'zbekiston Respublikasi Davstat Qo'mitasi - Viloyat/tuman ma'lumotlari uchun
+
 
 ---
 

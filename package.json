@@ -1,0 +1,51 @@
+{
+  "name": "elonlar-platform",
+  "version": "1.0.0",
+  "description": "Modern uy-joy ijarasi e'lonlari platformasi - O'zbekiston uchun",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=/index.html",
+    "dev": "live-server --port=3000 --open=/index.html --watch=.",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "gh-pages -d .",
+    "lint": "eslint *.js",
+    "format": "prettier --write *.html *.css *.js *.md"
+  },
+  "keywords": [
+    "uzbekistan",
+    "real-estate", 
+    "rental",
+    "property-listing",
+    "responsive-design",
+    "vanilla-javascript",
+    "css-grid",
+    "dark-mode",
+    "mobile-first",
+    "uzbek"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "url": "https://github.com/yourusername"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/elonlar-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/elonlar-platform/issues"
+  },
+  "homepage": "https://yourusername.github.io/elonlar-platform/",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "gh-pages": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

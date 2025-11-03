@@ -1,0 +1,927 @@
+/* General resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a122f;
+    color: #e5e5e5;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0f172a;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+    background-color: #3b82f6;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.logo span {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    position: relative;
+}
+
+.mobile-filter-toggle {
+    display: none;
+    background-color: #1e2a4a;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+.mobile-filter-toggle:hover {
+    background-color: #243b75;
+}
+
+.filters {
+    width: 280px;
+    background-color: #1e2a4a;
+    border-radius: 10px;
+    padding: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filters h2 {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.close-filters {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.filter-group select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #283752;
+    color: #fff;
+    cursor: pointer;
+}
+
+.type-buttons button,
+.room-buttons button,
+.btn-prepare,
+.btn-clear,
+.btn-apply {
+    cursor: pointer;
+    background-color: #18294a;
+    border: none;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 6px;
+    margin: 3px 3px 3px 0;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.type-buttons button:hover,
+.room-buttons button:hover,
+.btn-prepare:hover,
+.btn-clear:hover,
+.btn-apply:hover {
+    background-color: #243b75;
+}
+
+.type-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.price-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.price-inputs input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #283752;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.price-inputs input:focus {
+    outline: none;
+    background-color: #334155;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.room-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.all-rooms {
+    background-color: #273e8a;
+    padding: 7px 12px;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-clear {
+    background-color: #353a4a;
+}
+
+.btn-apply {
+    background-color: #315ea8;
+    color: white;
+}
+
+.ads-list {
+    flex-grow: 1;
+}
+
+.ads-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.results-count {
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.view-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.view-buttons button {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1e2a4a;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.view-buttons button:hover {
+    background-color: #243b75;
+}
+
+.view-buttons button.active {
+    background-color: #3b82f6;
+}
+
+.list-icon, .grid-icon {
+    font-size: 1.2rem;
+}
+
+.ads {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Grid view styles - Desktop card layout */
+.ads.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.ads.grid-view .ad-item {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-width: none;
+    align-items: stretch;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #1e2a4a;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ads.grid-view .ad-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.ads.grid-view .ad-image {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 0;
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.ads.grid-view .ad-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ads.grid-view .ad-content {
+    padding: 16px;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ads.grid-view .ad-content h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ads.grid-view .info-tags {
+    margin-bottom: 8px;
+}
+
+.ads.grid-view .ad-price {
+    margin-top: auto;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Add "Yangi" badge like in the image */
+.ads.grid-view .ad-item::before {
+    content: "Yangi";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #3b82f6;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* Price overlay on image like in the image */
+.ads.grid-view .ad-price-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.ads.grid-view .ad-price-overlay .status {
+    background-color: transparent;
+    color: #94a3b8;
+    padding: 0;
+    margin-left: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Add image counter like in the image */
+.ads.grid-view .ad-image::after {
+    content: "1/5";
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Hide the price in content area for grid view */
+.ads.grid-view .ad-content .ad-price {
+    display: none;
+}
+
+/* List view styles - Horizontal layout */
+.ads.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ads.list-view .ad-item {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #18294a;
+}
+
+.ads.list-view .ad-image {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ads.list-view .ad-content {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ads.list-view .ad-item::before {
+    display: none;
+}
+
+.ads.list-view .ad-image::after {
+    display: none;
+}
+
+.ads.grid-view .ad-content h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ads.grid-view .info-tags {
+    margin-bottom: 12px;
+}
+
+.ads.grid-view .ad-price {
+    margin-top: auto;
+    font-size: 1.1rem;
+}
+
+.ad-item {
+    display: flex;
+    gap: 20px;
+    background-color: #18294a;
+    border-radius: 12px;
+    padding: 15px;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ad-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ad-image {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ad-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.ad-content h3 {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.info-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    background-color: #315ea8;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.ad-price {
+    font-weight: 700;
+}
+
+.status {
+    background-color: #5e5e5e;
+    color: #ccc;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-left: 8px;
+    font-size: 0.8rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 16px;
+    }
+    
+    .logo span {
+        font-size: 1.1rem;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding: 16px;
+        gap: 0;
+    }
+    
+    .mobile-filter-toggle {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .filters {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 350px;
+        height: 100vh;
+        z-index: 1000;
+        border-radius: 0;
+        padding: 20px;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .filters.open {
+        left: 0;
+    }
+    
+    .filters::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+    
+    .filters.open::before {
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+    .close-filters {
+        display: block;
+    }
+    
+    .ads-list {
+        width: 100%;
+    }
+    
+    .ads-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .view-buttons {
+        align-self: flex-end;
+    }
+    
+    .ads {
+        gap: 16px;
+    }
+    
+    .ads.grid-view {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .ad-item {
+        flex-direction: column;
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .ads.grid-view .ad-item {
+        flex-direction: column;
+    }
+    
+    .ad-image {
+        width: 100%;
+        height: 200px;
+        align-self: stretch;
+    }
+    
+    .ad-content {
+        width: 100%;
+    }
+    
+    .ad-content h3 {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+    
+    .info-tags {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .tag {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    
+    .ad-price {
+        font-size: 1.1rem;
+        margin-top: 8px;
+    }
+    
+    .status {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .ads.grid-view {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+    
+    .ads.grid-view .ad-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 12px;
+    }
+    
+    .container {
+        padding: 12px;
+    }
+    
+    .filters {
+        padding: 16px;
+    }
+    
+    .filter-group {
+        margin-bottom: 16px;
+    }
+    
+    .type-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .type-buttons button {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .room-buttons {
+        justify-content: space-between;
+    }
+    
+    .room-buttons button {
+        flex: 1;
+        margin: 2px;
+        min-width: 40px;
+    }
+    
+    .price-inputs {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .price-inputs input {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-actions button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    .ad-item {
+        padding: 12px;
+    }
+    
+    .ad-image {
+        height: 180px;
+    }
+}/* L
+ight Mode Styles */
+body.light-mode {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+body.light-mode .header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+body.light-mode .logo span {
+    color: #1e293b;
+}
+
+body.light-mode .dark-mode-toggle {
+    color: #1e293b;
+}
+
+body.light-mode .dark-mode-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .mobile-filter-toggle {
+    background-color: #ffffff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode .mobile-filter-toggle:hover {
+    background-color: #f1f5f9;
+}
+
+body.light-mode .filters {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode .filters h2 {
+    color: #1e293b;
+}
+
+body.light-mode .filter-group label {
+    color: #374151;
+}
+
+body.light-mode .type-buttons button,
+body.light-mode .room-buttons button,
+body.light-mode .btn-prepare,
+body.light-mode .btn-clear,
+body.light-mode .btn-apply {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode .type-buttons button:hover,
+body.light-mode .room-buttons button:hover,
+body.light-mode .btn-prepare:hover {
+    background-color: #e2e8f0;
+}
+
+body.light-mode .btn-apply {
+    background-color: #3b82f6;
+    color: white;
+    border: 1px solid #3b82f6;
+}
+
+body.light-mode .btn-apply:hover {
+    background-color: #2563eb;
+}
+
+body.light-mode .btn-clear {
+    background-color: #6b7280;
+    color: white;
+    border: 1px solid #6b7280;
+}
+
+body.light-mode .btn-clear:hover {
+    background-color: #4b5563;
+}
+
+body.light-mode .price-inputs input,
+body.light-mode .filter-group select {
+    background-color: #ffffff;
+    color: #1e293b;
+    border: 1px solid #d1d5db;
+}
+
+body.light-mode .price-inputs input:focus,
+body.light-mode .filter-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+body.light-mode .results-count {
+    color: #6b7280;
+}
+
+body.light-mode .view-buttons button {
+    background-color: #ffffff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode .view-buttons button:hover {
+    background-color: #f1f5f9;
+}
+
+body.light-mode .view-buttons button.active {
+    background-color: #3b82f6;
+    color: white;
+    border: 1px solid #3b82f6;
+}
+
+body.light-mode .ad-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode .ad-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .ads.grid-view .ad-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode .ads.grid-view .ad-item::before {
+    background-color: #3b82f6;
+}
+
+body.light-mode .ads.list-view .ad-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode .ad-content h3 {
+    color: #1e293b;
+}
+
+body.light-mode .tag {
+    background-color: #3b82f6;
+    color: white;
+}
+
+body.light-mode .ad-price {
+    color: #1e293b;
+}
+
+body.light-mode .status {
+    background-color: #6b7280;
+    color: white;
+}
+
+body.light-mode .carousel-btn {
+    background: rgba(255, 255, 255, 0.8);
+    color: #1e293b;
+}
+
+/* Light mode mobile styles */
+@media (max-width: 768px) {
+    body.light-mode .filters {
+        background-color: #ffffff;
+    }
+    
+    body.light-mode .close-filters {
+        color: #1e293b;
+    }
+}

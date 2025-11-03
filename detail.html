@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E'lon Batafsil - Uy-Joy Ijarasi | E'lonlar Platform</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Uy-joy ijarasi e'loni batafsil ma'lumotlari. Rasm galereyasi, narx, joylashuv, qulayliklar va bog'lanish ma'lumotlari.">
+    <meta name="keywords" content="kvartira batafsil, uy ijara, e'lon ko'rish, uy-joy ma'lumotlari">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="detail.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="header-nav">
+            <button class="back-btn" onclick="goBack()">
+                <span>←</span>
+            </button>
+            <div class="logo">
+                <img src="home-icon.svg" alt="Home Icon" />
+                <span>E'lonlar</span>
+            </div>
+        </div>
+        <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+            <img src="dark-mode-icon.svg" alt="Dark mode icon" />
+        </button>
+    </header>
+
+    <main class="detail-container">
+        <div class="detail-content">
+            <!-- Image Gallery -->
+            <section class="image-gallery">
+                <div class="main-image">
+                    <img id="mainImage" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" alt="E'lon rasmi" />
+                    <div class="image-counter">
+                        <span id="imageCounter">1/5</span>
+                    </div>
+                </div>
+                <div class="thumbnail-list">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=100&h=80&fit=crop" alt="Yashash xonasi" class="thumbnail active" onclick="changeImage(this, 0)">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=100&h=80&fit=crop" alt="Oshxona" class="thumbnail" onclick="changeImage(this, 1)">
+                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=100&h=80&fit=crop" alt="Yotoq xonasi" class="thumbnail" onclick="changeImage(this, 2)">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=100&h=80&fit=crop" alt="Hammom" class="thumbnail" onclick="changeImage(this, 3)">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=100&h=80&fit=crop" alt="Balkon" class="thumbnail" onclick="changeImage(this, 4)">
+                </div>
+            </section>
+
+            <!-- Property Details -->
+            <section class="property-details">
+                <div class="price-section">
+                    <h1 class="price">1,000,000 so'm</h1>
+                    <span class="period">oyiga</span>
+                </div>
+                
+                <h2 class="title">2 xonali Talaba qizlar uchun Toshkent shahar Chilonzor tumani</h2>
+                
+                <div class="property-info">
+                    <div class="info-item">
+                        <span class="icon">🏠</span>
+                        <span>2 xona</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📏</span>
+                        <span>2/4 qavat</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        <span>Chilonzor tumani</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">👥</span>
+                        <span>Talaba qizlar uchun</span>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <h3>Tavsif</h3>
+                    <p>Toshkent shahar Chilonzor tumanida joylashgan 2 xonali kvartira ijara beriladi. Kvartira to'liq jihozlangan, barcha sharoitlar mavjud. Talaba qizlar uchun qulay joy. Metro bekatiga yaqin, transport qulayligi yaxshi.</p>
+                </div>
+
+                <div class="amenities">
+                    <h3>Qulayliklar</h3>
+                    <div class="amenity-list">
+                        <span class="amenity">📶 Internet</span>
+                        <span class="amenity">❄️ Konditsioner</span>
+                        <span class="amenity">🔥 Isitish</span>
+                        <span class="amenity">🚿 Dush</span>
+                        <span class="amenity">🍳 Oshxona</span>
+                        <span class="amenity">📺 Televizor</span>
+                        <span class="amenity">🚗 Parking</span>
+                        <span class="amenity">🛡️ Xavfsizlik</span>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+                    <h3>Bog'lanish</h3>
+                    <div class="contact-buttons">
+                        <button class="contact-btn call-btn">
+                            <span class="icon">📞</span>
+                            Qo'ng'iroq qilish
+                        </button>
+                        <button class="contact-btn message-btn">
+                            <span class="icon">💬</span>
+                            Xabar yuborish
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Similar Properties -->
+        <section class="similar-properties">
+            <h3>O'xshash e'lonlar</h3>
+            <div class="similar-list">
+                <div class="similar-item">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=300&h=200&fit=crop" alt="O'xshash e'lon">
+                    <div class="similar-info">
+                        <h4>3 xonali kvartira</h4>
+                        <p>800,000 so'm/oy</p>
+                    </div>
+                </div>
+                <div class="similar-item">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300&h=200&fit=crop" alt="O'xshash e'lon">
+                    <div class="similar-info">
+                        <h4>2 xonali kvartira</h4>
+                        <p>1,200,000 so'm/oy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="detail.js"></script>
+</body>
+</html>
